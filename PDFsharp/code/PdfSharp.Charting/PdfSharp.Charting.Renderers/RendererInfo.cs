@@ -29,6 +29,7 @@
 
 using System;
 using PdfSharp.Drawing;
+using PdfSharp.Pdf;
 
 namespace PdfSharp.Charting.Renderers
 {
@@ -125,7 +126,7 @@ namespace PdfSharp.Charting.Renderers
       get
       {
         if (defaultFont == null)
-          defaultFont = Converter.ToXFont(this.chart.font, new XFont("Arial", 12, XFontStyle.Regular));
+          defaultFont = Converter.ToXFont(this.chart.font, new XFont("Arial", 12, XFontStyle.Regular, new XPdfFontOptions(PdfFontEncoding.Unicode, PdfFontEmbedding.Always)));
 
         return defaultFont;
       }
@@ -140,7 +141,7 @@ namespace PdfSharp.Charting.Renderers
       get
       {
         if (defaultDataLabelFont == null)
-          defaultDataLabelFont = Converter.ToXFont(this.chart.font, new XFont("Arial", 10, XFontStyle.Regular));
+          defaultDataLabelFont = Converter.ToXFont(this.chart.font, new XFont("Arial", 10, XFontStyle.Regular, new XPdfFontOptions(PdfFontEncoding.Unicode, PdfFontEmbedding.Always)));
 
         return defaultDataLabelFont;
       }

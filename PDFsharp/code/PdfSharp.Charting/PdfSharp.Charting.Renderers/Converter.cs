@@ -60,7 +60,7 @@ namespace PdfSharp.Charting.Renderers
         if (size == 0)
           size = defaultFont.Size;
 
-        xfont = new XFont(fontFamily, size, fontStyle);
+        xfont = new XFont(fontFamily, size, fontStyle, defaultFont.PdfOptions);
       }
       return xfont;
     }
